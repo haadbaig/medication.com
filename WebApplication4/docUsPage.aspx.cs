@@ -27,5 +27,21 @@ namespace WebApplication4
             Session["user"] = Session["user"].ToString();
             Response.Redirect("./Settings.aspx");
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void Unnamed_Click1(object sender, EventArgs e)
+        {
+            myDAL d = new myDAL();
+            string s1 = Session["user"].ToString();
+            string s2 = (sender as LinkButton).CommandArgument;
+            d.deleteAppointments(s1, s2);
+
+            Response.Redirect(Request.RawUrl);
+
+        }
     }
 }

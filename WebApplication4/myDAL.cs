@@ -89,7 +89,7 @@ namespace WebApplication4
         public DataSet showComments(string doc)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
-            string query = "SELECT * FROM Comment WHERE [to] LIKE @doc";
+            string query = "SELECT * FROM Comment WHERE [to] = @doc";
             try
             {
                 con.Open();
@@ -110,7 +110,26 @@ namespace WebApplication4
             }
         }
 
-
+        public bool deleteAppointments(string doc, string pat)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
+            string query = "DELETE FROM Appointments WHERE dUser = @doc AND pUser = @pat";
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@doc", doc);
+                cmd.Parameters.AddWithValue("@pat", pat);
+                int Result = cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                throw;
+                return false;
+            }
+        }
 
     }
 }

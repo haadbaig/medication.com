@@ -165,20 +165,11 @@
                         >
                         <asp:TableCell><%#Eval("pUser") %></asp:TableCell>
                         <asp:TableCell><%#Eval("[date]") %></asp:TableCell>
-                        <%--<asp:TableCell>#F0FFFF</asp:TableCell>--%>
-                    </asp:TableRow>
-                </asp:Table>
-                                 </ItemTemplate>
-                             </asp:Repeater>
-                                 
-                  <div class="row">
+                        <asp:TableCell >
+                            <asp:LinkButton runat="server" CommandArgument='<%#Eval("pUser") %>' Font-Size="Medium" Text="Delete Appointment" BackColor="Red" OnClick="Unnamed_Click1"/>
+                        </asp:TableCell><%--<asp:TableCell>#F0FFFF</asp:TableCell>--%></asp:TableRow></asp:Table></ItemTemplate></asp:Repeater><div class="row">
                      <div class="col">
                         <center>
-                           <h4>Hospitals</h4>
-                        </center>
-                     </div>
-                  </div>
-                  <div class="row">
                      <div class="col">
                         <hr>
                      </div>
@@ -205,30 +196,28 @@
                         BackColor="OliveDrab"
                         Font-Bold="true"
                         >
-                        <asp:TableHeaderCell>Patient Name</asp:TableHeaderCell>
-                        <asp:TableHeaderCell>Comment</asp:TableHeaderCell>
-                        <%--<asp:TableHeaderCell>Value</asp:TableHeaderCell>--%>
-                    </asp:TableHeaderRow>
-                    <asp:TableRow 
+                        <asp:TableHeaderCell>Patient Name</asp:TableHeaderCell><asp:TableHeaderCell>Comment</asp:TableHeaderCell><%--<asp:TableHeaderCell>Value</asp:TableHeaderCell>--%></asp:TableHeaderRow><asp:TableRow 
                         ID="TableRow1" 
                         runat="server" 
                         BackColor="OrangeRed"
                         >
-                        <asp:TableCell><%#Eval("[from]") %></asp:TableCell>
-                        <asp:TableCell><%#Eval("body") %></asp:TableCell>
-                        <%--<asp:TableCell>#F0FFFF</asp:TableCell>--%>
-                    </asp:TableRow>
-                </asp:Table>
-                                 </ItemTemplate>
-                             </asp:Repeater>
+                        <asp:TableCell><%#Eval("[from]") %></asp:TableCell><asp:TableCell><%#Eval("body") %></asp:TableCell><%--<asp:TableCell>#F0FFFF</asp:TableCell>--%>
+                        </asp:TableRow>
+
+                  </asp:Table>
+                    </ItemTemplate>
+
+                     </asp:Repeater>
+
                   </div>
-               </div>
+                    </div>
 
-            </div>
+                     </div>
 
-         </div>
+                  </div>
+                   </div>
+                </div>
+
+                   </div>
           </div>
-       </div>
-      </div>
-      </div>
-</asp:Content>
+       </asp:Content>
