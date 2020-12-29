@@ -5,6 +5,7 @@
   
    <div class="container">
       <div class="row">
+
          <div class="col-md-5">
             <div class="card">
                <div class="card-body">
@@ -112,12 +113,17 @@
                               
                            </div>
                         </div>
-                     
-                 
                </div>
                 </div>
+
+             <center>
+                   <asp:Button  Enabled="true" BackColor="WhiteSmoke" runat="server" Text="Edit Profile" ForeColor="Black" OnClick="Unnamed1_Click" ></asp:Button>
+                     </center>
              </div>
           
+
+          <%----------------------------------------------------------------------------------------------------------------%>
+
                 
                    <div class="col-md-7">
             <div class="card">
@@ -127,22 +133,44 @@
                         <center>
                            <h4>Appointments</h4>
                         </center>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col">
+                         <asp:Repeater ID="repeater1" runat="server">
+                             <ItemTemplate>
 
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
-                     </div>
-                  </div>
-               
-                   </br></br></br></br></br></br></br></br></br>
-                  
+                  <asp:Table ID="Table1" 
+                    runat="server" 
+                    Font-Size="X-Large" 
+                    Width="550" 
+                    Font-Names="Palatino"
+                    BackColor="Orange"
+                    BorderColor="DarkRed"
+                    BorderWidth="2"
+                    ForeColor="Snow"
+                    CellPadding="5"
+                    CellSpacing="5"
+                    >
+                    <asp:TableHeaderRow 
+                        runat="server" 
+                        ForeColor="Snow"
+                        BackColor="OliveDrab"
+                        Font-Bold="true"
+                        >
+                        <asp:TableHeaderCell>Patient Name</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Time</asp:TableHeaderCell>
+                        <%--<asp:TableHeaderCell>Value</asp:TableHeaderCell>--%>
+                    </asp:TableHeaderRow>
+                    <asp:TableRow 
+                        ID="TableRow1" 
+                        runat="server" 
+                        BackColor="OrangeRed"
+                        >
+                        <asp:TableCell><%#Eval("pUser") %></asp:TableCell>
+                        <asp:TableCell><%#Eval("[date]") %></asp:TableCell>
+                        <%--<asp:TableCell>#F0FFFF</asp:TableCell>--%>
+                    </asp:TableRow>
+                </asp:Table>
+                                 </ItemTemplate>
+                             </asp:Repeater>
+                                 
                   <div class="row">
                      <div class="col">
                         <center>
@@ -156,10 +184,43 @@
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col">
+                     <asp:Repeater ID="repeater2" runat="server">
+                             <ItemTemplate>
 
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView2" runat="server"></asp:GridView>
-                     </div>
+                  <asp:Table ID="Table1" 
+                    runat="server" 
+                    Font-Size="X-Large" 
+                    Width="550" 
+                    Font-Names="Palatino"
+                    BackColor="Orange"
+                    BorderColor="DarkRed"
+                    BorderWidth="2"
+                    ForeColor="Snow"
+                    CellPadding="5"
+                    CellSpacing="5"
+                    >
+                    <asp:TableHeaderRow 
+                        runat="server" 
+                        ForeColor="Snow"
+                        BackColor="OliveDrab"
+                        Font-Bold="true"
+                        >
+                        <asp:TableHeaderCell>Patient Name</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Comment</asp:TableHeaderCell>
+                        <%--<asp:TableHeaderCell>Value</asp:TableHeaderCell>--%>
+                    </asp:TableHeaderRow>
+                    <asp:TableRow 
+                        ID="TableRow1" 
+                        runat="server" 
+                        BackColor="OrangeRed"
+                        >
+                        <asp:TableCell><%#Eval("[from]") %></asp:TableCell>
+                        <asp:TableCell><%#Eval("body") %></asp:TableCell>
+                        <%--<asp:TableCell>#F0FFFF</asp:TableCell>--%>
+                    </asp:TableRow>
+                </asp:Table>
+                                 </ItemTemplate>
+                             </asp:Repeater>
                   </div>
                </div>
 
@@ -168,4 +229,6 @@
          </div>
           </div>
        </div>
+      </div>
+      </div>
 </asp:Content>

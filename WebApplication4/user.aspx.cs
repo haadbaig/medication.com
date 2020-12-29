@@ -46,7 +46,7 @@ namespace WebApplication4
                 cmd.Parameters.AddWithValue("@age", TextBox5.Text[0]);
                 int Result = cmd.ExecuteNonQuery();
                 cmd.Dispose();
-                Response.Redirect("./user.aspx");
+                Response.Redirect("./login.aspx");
             }
             catch
             {

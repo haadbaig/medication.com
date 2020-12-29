@@ -83,7 +83,7 @@ runat="server" />
      </a>
         </div>
      <div class="image2">
-     <a href="medicalstore.aspx">
+     <a href="medSt.aspx">
        <asp:Image ID="Image3" ImageUrl="https://image.shutterstock.com/image-vector/pharmacy-logo-eco-green-cross-260nw-551634181.jpg"
 runat="server" />  
      </a>

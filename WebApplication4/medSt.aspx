@@ -23,7 +23,7 @@
            border-color:blue;
            box-shadow:initial;
            border-color:crimson;
-           width:60px;
+           width:60%;
            padding:6px 6px 6px 6px;
 
         }
@@ -33,8 +33,8 @@
            box-shadow:initial;
            border-color:indigo;
            border-radius:5px;
-            width:200px;
-           padding:6px 6px 6px 6px;
+           width:100%;
+           padding:0px;
         }
         </style>
 </head>

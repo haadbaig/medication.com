@@ -5,18 +5,18 @@
     <style>
         body
         {
-            
             background-color: azure;
              font-style:normal;
             font-family:'Times New Roman';
             font-size:25px;
+            background-size:contain;
         }
         h1{
            text-align:center;
            
         }
         form{
-           padding-left:30%;
+           
         }
         .p1
         {
@@ -27,7 +27,7 @@
         }
          .p2
         {
-             margin-right:40px;
+             margin-right: 3.5%;
             text-align:justify;
            color:cornflowerblue;
             text-align:center;
@@ -39,8 +39,8 @@
         }
         
         .container {
-  padding: 16px;
-}
+          padding: 0px;
+        }
        
         .Button {
           background-color:cornflowerblue; 

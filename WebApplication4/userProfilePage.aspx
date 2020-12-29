@@ -51,11 +51,8 @@
                     </button>
                     <div id="my-nav" class="collapse navbar-collapse">
                         <ul class="navbar-nav mx-auto">
-                             <li class="nav-item">
-                                <a class="nav-link" href="./Profile.aspx">Profile</a>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./stt.aspx">SETTINGS</a>
+                                <asp:LinkButton OnClick="Unnamed_Click" CssClass="nav-link"  runat="server">SETTINGS</asp:LinkButton>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="login.aspx">LOGOUT</a>

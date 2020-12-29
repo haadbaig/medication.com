@@ -176,6 +176,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="docPage.aspx" />
     <Content Include="docPreviewPage.aspx" />
+    <Content Include="Settings.aspx" />
     <Content Include="doctor.aspx" />
     <Content Include="docUsPage.aspx" />
     <Content Include="favicon.ico" />
@@ -260,6 +261,13 @@
     <Compile Include="docPreviewPage.aspx.designer.cs">
       <DependentUpon>docPreviewPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="doctor.aspx.cs">
       <DependentUpon>doctor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -291,7 +299,9 @@
     <Compile Include="medSt.aspx.designer.cs">
       <DependentUpon>medSt.aspx</DependentUpon>
     </Compile>
-    <Compile Include="myDAL.cs" />
+    <Compile Include="myDAL.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectUser.aspx.cs">
       <DependentUpon>SelectUser.aspx</DependentUpon>

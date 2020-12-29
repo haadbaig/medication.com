@@ -24,13 +24,13 @@ namespace WebApplication4
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// docName control.
+        /// dName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl docName;
+        protected global::System.Web.UI.WebControls.Label dName;
 
         /// <summary>
         /// addComm control.
@@ -42,21 +42,13 @@ namespace WebApplication4
         protected global::System.Web.UI.HtmlControls.HtmlInputText addComm;
 
         /// <summary>
-        /// cName control.
+        /// repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cName;
-
-        /// <summary>
-        /// commBody control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl commBody;
+        protected global::System.Web.UI.WebControls.Repeater repeater1;
+        protected global::System.Web.UI.WebControls.Repeater repeater2;
     }
 }

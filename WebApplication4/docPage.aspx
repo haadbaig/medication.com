@@ -9,8 +9,8 @@
                   <td>
                 <div class="card">
                 <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image">
-                <p class="card__name" id="docName" runat="server"><%#Eval("name") %></p>
-                <asp:Button runat="server" class="btn draw-border" Text="Veiw Profile" OnClick="docProfile_Click"></asp:Button>
+                <p><asp:Label class="card__name" ID="label1" runat="server" ><%#Eval("username") %></asp:Label></p>
+                <asp:Button runat="server" class="btn draw-border" CommandArgument='<%# Eval("username") %>' Text="Veiw Profile" OnClick="Button1_Click"></asp:Button>
                 </div>
                   <td>
               </tr>

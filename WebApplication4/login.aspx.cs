@@ -52,11 +52,13 @@ namespace WebApplication4
             if (ds.Tables[0].Rows.Count > 0) {
                 if (ds1.Tables[0].Rows.Count > 0)
                 {
-                    Response.Redirect("docUsPage.aspx?test=" + txtName.Text);
+                    Session["user"] = txtName.Text;
+                    Response.Redirect("docUsPage.aspx");
                 }
                 else if (ds2.Tables[0].Rows.Count > 0)
                 {
                     // todo: medical st page
+                    //Session["user"] = txtName.Text;
                     //Response.Redirect("docUsPage.aspx");
                 }
                 else

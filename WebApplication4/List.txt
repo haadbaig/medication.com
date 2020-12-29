@@ -1,0 +1,14 @@
+login
+sign up
+edit profile
+doctors gig
+add comment
+book a doctor
+book an appointment
+
+to be done:
+delete appointments
+delete account
+add medicines
+remove medicines
+forget passowrd

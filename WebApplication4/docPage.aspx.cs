@@ -14,28 +14,36 @@ namespace WebApplication4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ToString());
-            con.Open();
-            string query = "Select * from [User] where [User].username IN(SELECT dd.username FROM Doctor dd)";
-            SqlCommand cmd = new SqlCommand(query, con);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter();
-            da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-            ds.Tables[0].Rows[0]["name"].ToString();
-            repeaterControl.DataSource = ds;
-            repeaterControl.DataBind();
+            if (!Page.IsPostBack)
+            {
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ToString());
+                con.Open();
+                string query = "Select * from [User] where [User].username IN(SELECT dd.username FROM Doctor dd)";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                ds.Tables[0].Rows[0]["name"].ToString();
+                repeaterControl.DataSource = ds;
+                repeaterControl.DataBind();
+            }
         }
 
         protected void repeaterControl_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-
+            
         }
 
-        protected void docProfile_Click (object source, RepeaterCommandEventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            Session["user"] = ;
-            Response.Redirect("docPreviewPage.aspx");
+            //char[] s;
+            //s = Page.Request.Form["docName"].ToCharArray();
+            string username = (sender as Button).CommandArgument;
+
+            Session["docName"] = username;
+            Session["user"] = Session["user"].ToString();
+            Response.Redirect("./docPreviewPage.aspx");
         }
     }
 }

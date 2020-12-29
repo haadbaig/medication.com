@@ -22,5 +22,11 @@ namespace WebApplication4
             Session["user"] = Session["user"].ToString();
             Response.Redirect("docPage.aspx");
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            Session["user"] = Session["user"].ToString();
+            Response.Redirect("./Settings.aspx");
+        }
     }
 }

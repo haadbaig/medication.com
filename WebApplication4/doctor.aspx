@@ -9,11 +9,14 @@
             color:black;
             
             font-size:20px;
-            background-color:beige;
             background-image: url('doctor.jpg');
+            background-size:contain;
+            background-repeat:repeat-y;
         }
        form{
-           padding-left:30%;
+           display:flex;
+           flex-direction:row;
+           align-content:center;
        }
         h1{
             
@@ -34,67 +37,71 @@
            box-shadow:initial;
            border-color:indigo;
            border-radius:5px;
-            width:200px;
-           padding:6px 6px 6px 6px;
+           width:100%;
         }
         .buttonS{
-            padding-top:15px
+            padding-top:15px;
+            font-size: large;
         }
         .heads{
             text-emphasis-color:blue
         }
         
 
-</style>
+        .auto-style1 {
+            height: 1477px;
+        }
+        
+
+    </style>
 </head>
 <body>
     <form id="form1">
         <div>
-   <h1 style="font-size:40px;"><div class="heads" style="color:blue;font-size:x-large;font-weight:bolder;>Doctor</div></h1>
-    <div>
+   <h1 style="font-size:40px;"><div class="heads"  >Doctor</div></h1>
+    <div class="auto-style1">
         
-    <b><div class="heads" style="color:aqua;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Create An Acount</div></b>
+    <b><div class="heads">Create An Acount</div></b>
         <br />
         <br />
-     <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">First Name:</div>
+     <div class="heads" >First Name:</div>
         <br />
  <asp:TextBox ID="TextBox3" class="b1" requiblue runat="server"></asp:TextBox>
         <br />
         <br />
-     <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Last Name:</div>
+     <div class="heads" >Last Name:</div>
     <br />
   <asp:TextBox ID="txtName" class="b1" requiblue runat="server"></asp:TextBox>
 <br />
         <br />
-     <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">UserName:</div>
+     <div class="heads" >UserName:</div>
    <br />
  <asp:TextBox ID="TextBox4" class="b1" requiblue runat="server"></asp:TextBox>
         <br />
         <br />
-        <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">E-mail:</div>
+        <div class="heads">E-mail:</div>
         <br />
         <asp:TextBox ID="TextBox1" class="b1" requiblue runat="server"></asp:TextBox>
         <br />
         <br />
-     <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Password:</div>
+     <div class="heads" >Password:</div>
     <br />
-    <asp:TextBox ID="txtPassword" class="b1" requiblue TextMode="password"
-runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtPassword" class="b1" requiblue TextMode="password" runat="server"></asp:TextBox>
          <br />
         <br />
-     <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Confirm Password:</div>
+     <div class="heads" >Confirm Password:</div>
     <br />
      <asp:TextBox ID="TextBox6" class="b1" requiblue TextMode="password"
 runat="server"></asp:TextBox>
         <br />
         <br />
         
-        <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Age:</div>
+        <div class="heads" >Age:</div>
         <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
    
         <br />
         <br />
-        <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Country:</div>
+        <div class="heads" >Country:</div>
         <asp:DropDownList ID="DropDownList1" runat="server">
 <asp:ListItem Text="Select" Value="0"></asp:ListItem>
 <asp:ListItem Text="Pakistan"
@@ -108,27 +115,27 @@ Value="CAN"></asp:ListItem>
 </asp:DropDownList>
         <br />
         <br />
-        <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Gender:</div>
+        <div class="heads" >Gender:</div>
         <asp:RadioButton ID="Male" GroupName="Gender" requiblue runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" style="direction: ltr" Text="Male" />
         <asp:RadioButton ID="Female" GroupName="Gender" requiblue runat="server" OnCheckedChanged="Female_CheckedChanged" Text="Female" />
         <br />
         <br />
         
-         <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Qualification:</div>
+         <div class="heads" >Qualification:</div>
    <br />
    <asp:TextBox ID="TextBox5" class="b1" requiblue runat="server"></asp:TextBox>
 
          <br />
         <br />
 
-         <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Specialization:</div>
+         <div class="heads" >Specialization:</div>
    <br />
   <asp:TextBox ID="TextBox2" class="b1" requiblue runat="server"></asp:TextBox>
         
                  <br />
         <br />
         
-                 <div class="heads" style="color:blue;font-size:x-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Experience:</div>
+                 <div class="heads" >Experience:</div>
    <br />
   <asp:TextBox ID="TextBox7" class="b1" requiblue runat="server"></asp:TextBox>
          <br />
