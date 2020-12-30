@@ -170,6 +170,7 @@
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="card.css" />
+    <Content Include="card1.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
