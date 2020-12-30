@@ -123,12 +123,12 @@ td, th {
       </nav>
              <br />
              <br />
-            <h1 style="font-weight:bolder" >Medical Store</h1>
+            <h1 style="font-weight:bolder" >Medical Store: <p><%#Eval("msId")%></p></h1>
 
 <table style="width:100%">
   <tr>
-    <th>Medicine</th>
-    <th>Status</th> 
+    <th style="font-display:block; font-size:x-large; font-weight:bolder; color:white">Medicine</th>
+    <th style="font-display:block; font-size:x-large; font-weight:bolder; color:white">Status</th> 
   </tr>
     <asp:Repeater ID="repeater1" runat="server">
         <ItemTemplate>

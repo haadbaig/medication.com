@@ -158,19 +158,19 @@ namespace WebApplication4
         public bool addMedicines(string medst, string medName)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
-            string query = "INSERT INTO Medic (medicineId, msId) VALUES (@medNam,@medst)";
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@medst", medst);
-                cmd.Parameters.AddWithValue("@medNam", medName);
+                SqlCommand cmd = new SqlCommand("addMedicines", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add("@msid", SqlDbType.VarChar, 20).Value = medst;
+                cmd.Parameters.Add("@medid", SqlDbType.VarChar, 30).Value = medName;
                 int Result = cmd.ExecuteNonQuery();                
                 return true;
             }
             catch
             {
+                throw;
                 return false;
             }
         }
@@ -178,14 +178,13 @@ namespace WebApplication4
         public bool deleteMedicines(string medst, string medName)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
-            string query = "DELETE FROM Medic WHERE medicineId = @medNam AND msId = @medst";
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@medst", medst);
-                cmd.Parameters.AddWithValue("@medNam", medName);
+                SqlCommand cmd = new SqlCommand("delMedicines", con); 
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add("@msid", SqlDbType.VarChar, 20).Value = medst;
+                cmd.Parameters.Add("@medid", SqlDbType.VarChar, 30).Value = medName;
                 int Result = cmd.ExecuteNonQuery();
                 return true;
             }
@@ -290,6 +289,29 @@ namespace WebApplication4
             catch
             {
                 throw;
+            }
+        }
+
+        public DataSet showPharmacies()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
+            string query = "SELECT * FROM MedicalStore";
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.Text;
+                int Result = cmd.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                return ds;
+            }
+            catch
+            {
+                throw;
+                return null;
             }
         }
 
