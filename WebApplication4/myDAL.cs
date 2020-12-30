@@ -131,6 +131,169 @@ namespace WebApplication4
             }
         }
 
+        public DataSet showMedicines(string medst)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
+            string query = "SELECT * FROM Medic WHERE msId = @medst";
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@medst", medst);
+                int Result = cmd.ExecuteNonQuery();
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                return ds;
+            }
+            catch
+            {
+                throw;
+                return null;
+            }
+        }
+
+        public bool addMedicines(string medst, string medName)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
+            string query = "INSERT INTO Medic (medicineId, msId) VALUES (@medNam,@medst)";
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@medst", medst);
+                cmd.Parameters.AddWithValue("@medNam", medName);
+                int Result = cmd.ExecuteNonQuery();                
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool deleteMedicines(string medst, string medName)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
+            string query = "DELETE FROM Medic WHERE medicineId = @medNam AND msId = @medst";
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@medst", medst);
+                cmd.Parameters.AddWithValue("@medNam", medName);
+                int Result = cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public void deleteAccount(string email, string username, string pw)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString);
+                string query = "SELECT u.username FROM [User] u WHERE u.username LIKE @username AND u.pw LIKE @pw";
+                string query1 = "SELECT d.username FROM Doctor d WHERE d.username LIKE @username";
+                string query2 = "SELECT m.username FROM MedicalStore m WHERE m.username = @username";
+                SqlCommand command = new SqlCommand(query, con);
+                SqlCommand command1 = new SqlCommand(query1, con);
+                SqlCommand command2 = new SqlCommand(query2, con);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@pw", pw);
+                command1.Parameters.AddWithValue("@username", username);
+                command2.Parameters.AddWithValue("@username", username);
+                con.Open();
+
+                int res = command.ExecuteNonQuery();
+                int res1 = command1.ExecuteNonQuery();
+                int res2 = command2.ExecuteNonQuery();
+                SqlDataAdapter sa = new SqlDataAdapter(command);
+                DataSet ds = new DataSet();
+                sa.Fill(ds);
+                // to check if its doctor 
+                SqlDataAdapter sa1 = new SqlDataAdapter(command1);
+                DataSet ds1 = new DataSet();
+                sa1.Fill(ds1);
+                // to check if its medStr
+                SqlDataAdapter sa2 = new SqlDataAdapter(command2);
+                DataSet ds2 = new DataSet();
+                sa2.Fill(ds2);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds1.Tables[0].Rows.Count > 0)
+                    {
+                        //appointments, doctor, user, comment
+                        query1 = "DELETE FROM comment WHERE [to] LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+
+                        query1 = "DELETE FROM Appointments WHERE dUser LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+                        
+                        query1 = "DELETE FROM Doctor WHERE username LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+                        
+                        query1 = "DELETE FROM [User] WHERE username LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+                    }
+                    else if (ds2.Tables[0].Rows.Count > 0)
+                    {
+                        //medic,medicalStore,User
+                        query1 = "DELETE FROM Medic WHERE msId LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+                        
+                        query1 = "DELETE FROM MedicalStore WHERE username LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+                        
+                        query1 = "DELETE FROM [User] WHERE username LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+
+                    }
+                    else if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        //Appointments
+                        query1 = "DELETE FROM Appointments WHERE pUser LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+                        
+                        query1 = "DELETE FROM [User] WHERE username LIKE @username";
+                        command1 = new SqlCommand(query1, con);
+                        command1.Parameters.AddWithValue("@username", username);
+                        res1 = command1.ExecuteNonQuery();
+                    }
+
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
     }
 }
 

@@ -5,16 +5,9 @@
         <div class="container">
           <div class="card">
             <img src="./assets/images/med1.jpg" alt="Person" class="card__image">
-            <p class="card__name">Disprin</p>
-            <div class="row">
-            <button class="btn draw-border">View Profile</button>
-            </div>
-          </div>
-            <div class="card">
-            <img src="./assets/images/med1.jpg" alt="Person" class="card__image">
-            <p class="card__name">Zyloric</p>
-            <div class="row">
-            <button class="btn draw-border">View Profile</button>
+            <p class="card__name" style="padding-top:10%;" ></p>
+            <div style="padding-top:20%;" class="row">
+            <button style="width:100%" class="btn draw-border">Available Pharmacies</button>
             </div>
           </div>
         </div>

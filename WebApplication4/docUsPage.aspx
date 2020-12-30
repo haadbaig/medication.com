@@ -201,23 +201,4 @@
                         runat="server" 
                         BackColor="OrangeRed"
                         >
-                        <asp:TableCell><%#Eval("[from]") %></asp:TableCell><asp:TableCell><%#Eval("body") %></asp:TableCell><%--<asp:TableCell>#F0FFFF</asp:TableCell>--%>
-                        </asp:TableRow>
-
-                  </asp:Table>
-                    </ItemTemplate>
-
-                     </asp:Repeater>
-
-                  </div>
-                    </div>
-
-                     </div>
-
-                  </div>
-                   </div>
-                </div>
-
-                   </div>
-          </div>
-       </asp:Content>
+                        <asp:TableCell><%#Eval("[from]") %></asp:TableCell><asp:TableCell><%#Eval("body") %></asp:TableCell><%--<asp:TableCell>#F0FFFF</asp:TableCell>--%></asp:TableRow></asp:Table></ItemTemplate></asp:Repeater></div></div></div></div></div></div></div></div></div></asp:Content>

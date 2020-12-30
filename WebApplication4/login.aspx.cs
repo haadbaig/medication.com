@@ -25,7 +25,7 @@ namespace WebApplication4
             /* Because We will put all out values from our (UserRegistration.aspx) To in Bussiness object and then Pass it to Bussiness logic and then to DataAcess  this way the flow carry on*/
             string query = "SELECT u.username FROM [User] u WHERE u.username LIKE @username AND u.pw LIKE @pw";
             string query1 = "SELECT d.username FROM Doctor d WHERE d.username LIKE @username";
-            string query2 = "SELECT ms.username FROM MedicalStore ms WHERE ms.username LIKE @username";
+            string query2 = "SELECT m.username FROM MedicalStore m WHERE m.username = @username";
             SqlCommand command = new SqlCommand(query, con);
             SqlCommand command1 = new SqlCommand(query1, con);
             SqlCommand command2 = new SqlCommand(query2, con);
@@ -47,7 +47,7 @@ namespace WebApplication4
             // to check if its medStr
             SqlDataAdapter sa2 = new SqlDataAdapter(command2);
             DataSet ds2 = new DataSet();
-            sa1.Fill(ds2);
+            sa2.Fill(ds2);
             
             if (ds.Tables[0].Rows.Count > 0) {
                 if (ds1.Tables[0].Rows.Count > 0)
@@ -57,11 +57,10 @@ namespace WebApplication4
                 }
                 else if (ds2.Tables[0].Rows.Count > 0)
                 {
-                    // todo: medical st page
-                    //Session["user"] = txtName.Text;
-                    //Response.Redirect("docUsPage.aspx");
+                    Session["user"] = txtName.Text;
+                    Response.Redirect("medStUsPage.aspx");
                 }
-                else
+                else if(ds.Tables[0].Rows.Count > 0)
                 {
                     Session["user"] = txtName.Text;
                     Response.Redirect("userProfilePage.aspx");

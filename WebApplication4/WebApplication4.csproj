@@ -169,13 +169,18 @@
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\popper.min.js" />
+    <Content Include="card.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="deleteAnAccont.aspx" />
+    <Content Include="deleteMedicine.aspx" />
     <Content Include="docPage.aspx" />
     <Content Include="docPreviewPage.aspx" />
+    <Content Include="addMedicine.aspx" />
+    <Content Include="medStUsPage.aspx" />
     <Content Include="Settings.aspx" />
     <Content Include="doctor.aspx" />
     <Content Include="docUsPage.aspx" />
@@ -247,6 +252,20 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="deleteAnAccont.aspx.cs">
+      <DependentUpon>deleteAnAccont.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deleteAnAccont.aspx.designer.cs">
+      <DependentUpon>deleteAnAccont.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deleteMedicine.aspx.cs">
+      <DependentUpon>deleteMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deleteMedicine.aspx.designer.cs">
+      <DependentUpon>deleteMedicine.aspx</DependentUpon>
+    </Compile>
     <Compile Include="docPage.aspx.cs">
       <DependentUpon>docPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -260,6 +279,20 @@
     </Compile>
     <Compile Include="docPreviewPage.aspx.designer.cs">
       <DependentUpon>docPreviewPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addMedicine.aspx.cs">
+      <DependentUpon>addMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addMedicine.aspx.designer.cs">
+      <DependentUpon>addMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="medStUsPage.aspx.cs">
+      <DependentUpon>medStUsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="medStUsPage.aspx.designer.cs">
+      <DependentUpon>medStUsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>

@@ -107,11 +107,15 @@
         </a>    
          <br />
         <br />
-        <span class="s"> <a href="forgotpass.aspx">Forgotpassword?</a></span>
+        <span class="s"> <a href="./forgetPassword.aspx">Forgotpassword?</a></span>
           <br />
      <br />
-            Don't have an account?<span class="s"> <a href="selectUser.aspx">Sign up here</a></span> 
-         </div>
+            Don't have an account?
+        <span class="s"> <a href="selectUser.aspx">Sign up here</a></span> 
+        <br />
+    <asp:LinkButton CssClass="s" Font-Size="Medium" Text="Delete an Account?" runat="server" href="./deleteAnAccont.aspx" />     
+    </div>
+            
         </div>  
     
 </asp:Content>

@@ -5,10 +5,11 @@ doctors gig
 add comment
 book a doctor
 book an appointment
-
-to be done:
-delete appointments
-delete account
+doc can delete appointment
 add medicines
 remove medicines
+
+to be done:
+delete account
+
 forget passowrd
